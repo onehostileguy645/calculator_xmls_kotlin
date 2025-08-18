@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         val eight: AppCompatButton = findViewById(R.id.eight)
         val nine: AppCompatButton = findViewById(R.id.nine)
 
+        val coma: AppCompatButton = findViewById(R.id.coma)
+
         val plus: AppCompatButton = findViewById(R.id.plus)
         val minus: AppCompatButton = findViewById(R.id.minus)
         val divide: AppCompatButton = findViewById(R.id.divide)
@@ -91,6 +93,9 @@ class MainActivity : AppCompatActivity() {
         eight.setOnClickListener { putANumber('8'); numbers.text = currentNumber }
         nine.setOnClickListener { putANumber('9'); numbers.text = currentNumber }
 
+
+
+        coma.setOnClickListener { putANumber('.'); numbers.text = currentNumber }
 
 
 
@@ -198,11 +203,11 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             if (currentNumber[currentNumber.length-1] == '+' || currentNumber[currentNumber.length-1] == '-' || currentNumber[currentNumber.length-1] == '/' || currentNumber[currentNumber.length-1] == '*'){
-                currentNumber = currentNumber.substring(0, currentNumber.length-2)
+                currentNumber = currentNumber.substring(0, currentNumber.length-1)
                 isThereAnyOperations = false
             }
             else{
-                currentNumber = currentNumber.substring(0, currentNumber.length-2)
+                currentNumber = currentNumber.substring(0, currentNumber.length-1)
             }
         }
     }
