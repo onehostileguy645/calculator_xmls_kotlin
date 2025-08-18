@@ -155,7 +155,7 @@ class MainActivity : AppCompatActivity() {
         firstNumber = 0.0
         secondNumber = "0"
         isThereAnyOperations = false
-        result = 0.0// Reset operator after calculation
+        result = 0.0
 
     }
 
