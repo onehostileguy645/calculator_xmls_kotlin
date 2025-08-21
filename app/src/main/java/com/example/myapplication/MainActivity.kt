@@ -135,8 +135,7 @@ class MainActivity : AppCompatActivity() {
             '/' -> {
                 if (num2 != 0.0) {
                     result = firstNumber / num2
-                } else {
-                    // Handle division by zero error
+                } else { // Handle division by zero error
                     currentNumber = "Error"
                     return
                 }
@@ -150,7 +149,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        currentNumber = result.toString()
+        if (result.toString().last() != '0'){
+            currentNumber = result.toString()
+        } else{
+            currentNumber = result.toInt().toString()
+        }
         currentOperator = null
         firstNumber = 0.0
         secondNumber = "0"
